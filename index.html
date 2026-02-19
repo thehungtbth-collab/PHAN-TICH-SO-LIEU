@@ -477,7 +477,10 @@ document.addEventListener('mouseup', (e) => {
             if(parent.closest('.en-text') || parent.closest('.q-block') || parent.closest('.text-only')) {
                 currentRange = range;
                 const rect = range.getBoundingClientRect();
-                hlBtn.style.display = 'block'; hlBtn.style.top = (rect.top + window.scrollY - 35) + 'px'; hlBtn.style.left = (rect.left + (rect.width/2)) + 'px';
+hlBtn.style.display = 'block'; 
+hlBtn.style.top = (rect.top + window.scrollY - 35) + 'px'; 
+// Trừ đi khoảng 50px ở toạ độ left để dịch nút Highlight sang bên trái, nhường vị trí trung tâm cho icon Laban
+hlBtn.style.left = (rect.left + (rect.width/2) - 50) + 'px';
                 return;
             }
         }
